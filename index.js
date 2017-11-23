@@ -23,7 +23,7 @@ exports.bitflyerBot = function bitflyerBot(event, callback) {
           buyBTCJPY(api, 5000),
           //buyMONAJPY(api, 2500)
         ])
-          .then(function(res) { console.log(res); resolve(res); }, reject)
+          .then(resolve, reject)
       });
     })
     .then(function(res) {
@@ -102,7 +102,7 @@ function sendChildOrder(api, pair, side, amount) {
         return;
       }
       if (data.status < 0) {
-        reject(data);
+        reject({"response": data, "amount": amount, "pair": pair, "side": side});
         return;
       }
       resolve(data);
