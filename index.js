@@ -8,8 +8,8 @@ var bitflyer = require('bitflyer-node');
 
 exports.bitflyerBot = function bitflyerBot(event, callback) {
   // The Cloud Pub/Sub Message object.
-  const pubsubMessage = event.data;
-  console.log(event.data);
+  buf = new Buffer(event.data.data, 'base64')
+  const pubsubMessage = JSON.parse(buf.toString());
 
   var api= new bitflyer.REST(pubsubMessage.api.key, pubsubMessage.api.secret);
   getJPYBalance(api)
