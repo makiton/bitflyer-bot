@@ -1,0 +1,12 @@
+{
+  "name": "bitflyer-bot",
+  "version": "1.0.0",
+  "description": "Auto trade bot",
+  "main": "index.js",
+  "repository": "https://github.com/makiton/bitflyer-bot",
+  "author": "makiton",
+  "license": "MIT",
+  "dependencies": {
+    "bitflyer-node": "^0.0.3"
+  }
+}
